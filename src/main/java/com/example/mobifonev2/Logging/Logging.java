@@ -14,16 +14,24 @@ public class Logging {
     private Integer id;
     private String ip;
     private String username;
-    private Date date_log;
+    private Date dateLog;
 
     public Logging() {
     }
 
-    public Logging(Integer id, String ip, String username, Date date_log) {
+    public Logging(Integer id, String ip, String username, Date dateLog) {
         this.id = id;
         this.ip = ip;
         this.username = username;
-        this.date_log = date_log;
+        this.dateLog = dateLog;
+    }
+
+    public Date getDateLog() {
+        return dateLog;
+    }
+
+    public void setDateLog(Date dateLog) {
+        this.dateLog = dateLog;
     }
 
     public Integer getId() {
@@ -50,11 +58,4 @@ public class Logging {
         this.username = username;
     }
 
-    public Date getDate_log() {
-        return date_log;
-    }
-
-    public void setDate_log(Date date_log) {
-        this.date_log = date_log;
-    }
 }

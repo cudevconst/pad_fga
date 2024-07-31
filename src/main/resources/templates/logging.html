@@ -56,14 +56,14 @@
       </form>
     </div>
 
-    <div th:if="${logging.size() > 0}">
+    <div th:if="${logging.size() > 0}" class="table-container">
       <table class="table table-hover table-responsive-xl">
         <thead class="thead-light">
           <tr>
             <th th:replace="fragments/sorting :: sorting('id','Id')"></th>
             <th th:replace="fragments/sorting :: sorting('ip','Ip')"></th>
             <th th:replace="fragments/sorting :: sorting('username','Username')"></th>
-            <th th:replace="fragments/sorting :: sorting('date_log','DateLog')"></th>
+            <th th:replace="fragments/sorting :: sorting('dateLog','DateLog')"></th>
           </tr>
         </thead>
         <tbody>
@@ -71,7 +71,7 @@
             <th scope="row">[[${log.id}]]</th>
             <td>[[${log.ip}]]</td>
             <td>[[${log.username}]]</td>
-            <td>[[${log.date_log}]]</td>
+            <td>[[${log.dateLog}]]</td>
           </tr>
         </tbody>
       </table>
