@@ -44,7 +44,7 @@ public class LoggingController {
                 pageTuts = loggingService.findByTitleContainingIgnoreCase(keyword, pageable);
             }
         loggings = pageTuts.getContent();
-
+        model.addAttribute("keyword", keyword);
         model.addAttribute("logging", loggings);
         model.addAttribute("currentPage", pageTuts.getNumber() + 1);
         model.addAttribute("totalItems", pageTuts.getTotalElements());
