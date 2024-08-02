@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "DSTK.FGA_LOG")
+@Table(name = "FGA_LOG")
 public class Logging {
 
     @Id

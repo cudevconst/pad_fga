@@ -6,15 +6,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/api")
 public class LoggingAPI {
     @Autowired
     private LoggingService loggingService;
+    @Autowired
+    private LoggingRepository loggingRepository;
     @GetMapping("")
-    public List<LoggingReport> test(){
-        return loggingService.getCountOfUsersByUsername();
+    public List<Logging> test(){
+        return loggingRepository.findAll();
     }
 }

@@ -61,17 +61,39 @@
         <thead class="thead-light">
           <tr>
             <th th:replace="fragments/sorting :: sorting('id','Id')"></th>
-            <th th:replace="fragments/sorting :: sorting('ip','Ip')"></th>
-            <th th:replace="fragments/sorting :: sorting('username','Username')"></th>
-            <th th:replace="fragments/sorting :: sorting('dateLog','DateLog')"></th>
+            <th th:replace="fragments/sorting :: sorting('fileId','File ID')"></th>
+            <th th:replace="fragments/sorting :: sorting('timeInsert','Time Insert')"></th>
+            <th th:replace="fragments/sorting :: sorting('dbName','DB Name')"></th>
+            <th th:replace="fragments/sorting :: sorting('dateTime','Date time')"></th>
+            <th th:replace="fragments/sorting :: sorting('dbUser','DB User')"></th>
+            <th th:replace="fragments/sorting :: sorting('osUser','OS User')"></th>
+            <th th:replace="fragments/sorting :: sorting('clientId','Client ID')"></th>
+            <th th:replace="fragments/sorting :: sorting('objectSchema','Object Schema')"></th>
+            <th th:replace="fragments/sorting :: sorting('objectName','Object Name')"></th>
+            <th th:replace="fragments/sorting :: sorting('policyName','Policy Name')"></th>
+            <th th:replace="fragments/sorting :: sorting('sqlText','Sql Text')"></th>
+            <th th:replace="fragments/sorting :: sorting('statementType','Statement Type')"></th>
+            <th th:replace="fragments/sorting :: sorting('sqlBind','Sql Bind')"></th>
+            <th th:replace="fragments/sorting :: sorting('rowNum','Row num')"></th>
           </tr>
         </thead>
         <tbody>
           <tr th:each="log : ${logging}">
             <th scope="row">[[${log.id}]]</th>
-            <td>[[${log.ip}]]</td>
-            <td>[[${log.username}]]</td>
-            <td>[[${log.dateLog}]]</td>
+            <td>[[${log.fileId}]]</td>
+            <td>[[${log.timeInsert}]]</td>
+            <td>[[${log.dbName}]]</td>
+            <td>[[${log.dateTime}]]</td>
+            <td>[[${log.dbUser}]]</td>
+            <td>[[${log.osUser}]]</td>
+            <td>[[${log.clientId}]]</td>
+            <td>[[${log.objectSchema}]]</td>
+            <td>[[${log.objectName}]]</td>
+            <td>[[${log.policyName}]]</td>
+            <td>[[${log.sqlText}]]</td>
+            <td>[[${log.statementType}]]</td>
+            <td>[[${log.sqlBind}]]</td>
+            <td>[[${log.rowNum}]]</td>
           </tr>
         </tbody>
       </table>
