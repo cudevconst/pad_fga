@@ -9,11 +9,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-<<<<<<< HEAD
-@Table(name = "FGA_LOG", schema = "DSTK")
-=======
 @Table(name = "FGA_LOG")
->>>>>>> 728a992269e842f1ed34f6c652135a78285d16c1
 public class Logging {
 
     @Id
