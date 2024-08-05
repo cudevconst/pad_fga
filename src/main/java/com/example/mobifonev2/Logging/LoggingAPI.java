@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/api")
@@ -15,7 +14,10 @@ public class LoggingAPI {
     private LoggingService loggingService;
     @Autowired
     private LoggingRepository loggingRepository;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 728a992269e842f1ed34f6c652135a78285d16c1
     @GetMapping("")
     public List<Logging> test(){
         return loggingRepository.findAll();
