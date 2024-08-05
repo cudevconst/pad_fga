@@ -48,7 +48,7 @@
             </div>
             <select form="searchForm" name="size" th:value="${pageSize}" onchange="changePageSize()" class="size-select"
               id="pageSize">
-              <option th:each="s : ${ {5, 10, 20} }" th:value="${s}" th:text="${s}" th:selected="${s == pageSize}"></option>
+              <option th:each="s : ${ {30,50,70} }" th:value="${s}" th:text="${s}" th:selected="${s == pageSize}"></option>
             </select>
             <button id="btnClear" class="btn btn-info" style="margin-left: 10px;">Xoá</button>
           </div>
@@ -61,17 +61,41 @@
         <thead class="thead-light">
           <tr>
             <th th:replace="fragments/sorting :: sorting('id','Id')"></th>
-            <th th:replace="fragments/sorting :: sorting('ip','Ip')"></th>
-            <th th:replace="fragments/sorting :: sorting('username','Username')"></th>
-            <th th:replace="fragments/sorting :: sorting('dateLog','DateLog')"></th>
+            <th th:replace="fragments/sorting :: sorting('fileId','fileIp')"></th>
+            <th th:replace="fragments/sorting :: sorting('timeInsert','timeInsert')"></th>
+            <th th:replace="fragments/sorting :: sorting('dbName','dbName')"></th>
+            <th th:replace="fragments/sorting :: sorting('dateTime','dateTime')"></th>
+            <th th:replace="fragments/sorting :: sorting('dbUser','dbUser')"></th>
+            <th th:replace="fragments/sorting :: sorting('osUser','osUser')"></th>
+            <th th:replace="fragments/sorting :: sorting('userHost','userHost')"></th>
+            <th th:replace="fragments/sorting :: sorting('clientId','clientId')"></th>
+            <th th:replace="fragments/sorting :: sorting('objectSchema','objectSchema')"></th>
+            <th th:replace="fragments/sorting :: sorting('objectName','objectName')"></th>
+            <th th:replace="fragments/sorting :: sorting('policyName','policyName')"></th>
+            <th th:replace="fragments/sorting :: sorting('sqlText','sqlText')"></th>
+            <th th:replace="fragments/sorting :: sorting('statementType','statementType')"></th>
+            <th th:replace="fragments/sorting :: sorting('sqlBind','sqlBind')"></th>
+            <th th:replace="fragments/sorting :: sorting('rowNum','rowNum')"></th>
           </tr>
         </thead>
         <tbody>
           <tr th:each="log : ${logging}">
             <th scope="row">[[${log.id}]]</th>
-            <td>[[${log.ip}]]</td>
-            <td>[[${log.username}]]</td>
-            <td>[[${log.dateLog}]]</td>
+            <td>[[${log.fileId}]]</td>
+            <td>[[${log.timeInsert}]]</td>
+            <td>[[${log.dbName}]]</td>
+            <td>[[${log.dateTime}]]</td>
+            <td>[[${log.dbUser}]]</td>
+            <td>[[${log.osUser}]]</td>
+            <td>[[${log.userHost}]]</td>
+            <td>[[${log.clientId}]]</td>
+            <td>[[${log.objectSchema}]]</td>
+            <td>[[${log.objectName}]]</td>
+            <td>[[${log.policyName}]]</td>
+            <td>[[${log.sqlText}]]</td>
+            <td>[[${log.statementType}]]</td>
+            <td>[[${log.sqlBind}]]</td>
+            <td>[[${log.rowNum}]]</td>
           </tr>
         </tbody>
       </table>

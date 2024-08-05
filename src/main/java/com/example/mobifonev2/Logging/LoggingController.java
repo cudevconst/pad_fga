@@ -16,12 +16,11 @@ import java.util.List;
 import java.util.Objects;
 
 @Controller
-@RequestMapping("/logging")
 public class LoggingController {
     @Autowired
     private LoggingService loggingService;
 
-    @GetMapping("")
+    @GetMapping("/logging")
     public String findTitlePage(Model model, @RequestParam(required = false) String keyword,
                                        @RequestParam(defaultValue = "1") int page,
                                        @RequestParam(defaultValue = "10") int size,
@@ -44,6 +43,7 @@ public class LoggingController {
                 pageTuts = loggingService.findByTitleContainingIgnoreCase(keyword, pageable);
             }
         loggings = pageTuts.getContent();
+            System.out.println(loggings.size());
         model.addAttribute("keyword", keyword);
         model.addAttribute("logging", loggings);
         model.addAttribute("currentPage", pageTuts.getNumber() + 1);

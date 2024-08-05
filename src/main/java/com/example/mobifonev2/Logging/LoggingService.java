@@ -14,7 +14,7 @@ public class LoggingService {
     @Autowired
     private LoggingRepository loggingRepository;
     public Page<Logging> findByTitleContainingIgnoreCase(String keyword, Pageable pageable){
-        return loggingRepository.findByUsernameContainingOrIpContaining(keyword, pageable);
+        return loggingRepository.findByUserHostContaining(keyword, pageable);
     }
     public Page<Logging> findAll(Pageable pageable){
         return loggingRepository.findAll(pageable);

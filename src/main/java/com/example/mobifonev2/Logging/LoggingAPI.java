@@ -13,8 +13,11 @@ import java.util.Objects;
 public class LoggingAPI {
     @Autowired
     private LoggingService loggingService;
+    @Autowired
+    private LoggingRepository loggingRepository;
+
     @GetMapping("")
-    public List<LoggingReport> test(){
-        return loggingService.getCountOfUsersByUsername();
+    public List<Logging> test(){
+        return loggingRepository.findAll();
     }
 }

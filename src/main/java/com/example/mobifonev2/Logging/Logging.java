@@ -1,18 +1,19 @@
 package com.example.mobifonev2.Logging;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "DSTK.FGA_LOG")
+@Table(name = "FGA_LOG", schema = "DSTK")
 public class Logging {
 
     @Id
-    private Integer id;
+    private Long id;
     private String fileId;
     private Date timeInsert;
     private String dbName;
@@ -28,35 +29,16 @@ public class Logging {
     private String sqlText;
     private String statementType;
     private String sqlBind;
-    private Integer rowNum;
+    private Long rowNum;
 
     public Logging() {
     }
 
-    public Logging(Integer id, String fileId, Date timeInsert, String dbName, Date dateTime, String dbUser, String osUser, String userHost, String clientId, String objectSchema, String objectName, String policyName, String sqlText, String statementType, String sqlBind, Integer rowNum) {
-        this.id = id;
-        this.fileId = fileId;
-        this.timeInsert = timeInsert;
-        this.dbName = dbName;
-        this.dateTime = dateTime;
-        this.dbUser = dbUser;
-        this.osUser = osUser;
-        this.userHost = userHost;
-        this.clientId = clientId;
-        this.objectSchema = objectSchema;
-        this.objectName = objectName;
-        this.policyName = policyName;
-        this.sqlText = sqlText;
-        this.statementType = statementType;
-        this.sqlBind = sqlBind;
-        this.rowNum = rowNum;
-    }
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -108,11 +90,11 @@ public class Logging {
         this.osUser = osUser;
     }
 
-    public String getuserHost() {
+    public String getUserHost() {
         return userHost;
     }
 
-    public void setuserHost(String userHost) {
+    public void setUserHost(String userHost) {
         this.userHost = userHost;
     }
 
@@ -172,11 +154,30 @@ public class Logging {
         this.sqlBind = sqlBind;
     }
 
-    public Integer getRowNum() {
+    public Long getRowNum() {
         return rowNum;
     }
 
-    public void setRowNum(Integer rowNum) {
+    public void setRowNum(Long rowNum) {
+        this.rowNum = rowNum;
+    }
+
+    public Logging(Long id, String fileId, Date timeInsert, String dbName, Date dateTime, String dbUser, String osUser, String userHost, String clientId, String objectSchema, String objectName, String policyName, String sqlText, String statementType, String sqlBind, Long rowNum) {
+        this.id = id;
+        this.fileId = fileId;
+        this.timeInsert = timeInsert;
+        this.dbName = dbName;
+        this.dateTime = dateTime;
+        this.dbUser = dbUser;
+        this.osUser = osUser;
+        this.userHost = userHost;
+        this.clientId = clientId;
+        this.objectSchema = objectSchema;
+        this.objectName = objectName;
+        this.policyName = policyName;
+        this.sqlText = sqlText;
+        this.statementType = statementType;
+        this.sqlBind = sqlBind;
         this.rowNum = rowNum;
     }
 }
